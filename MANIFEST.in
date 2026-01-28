@@ -1,0 +1,4 @@
+recursive-include pecon *.c *.h
+recursive-include src *.c
+recursive-include include *.h
+
