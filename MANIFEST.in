@@ -1,4 +1,6 @@
-recursive-include pecon *.c *.h
-recursive-include src *.c
-recursive-include include *.h
+include README.md
+include LICENSE
 
+recursive-include pecon *.pyx *.pxd
+recursive-include pecon/_libs/src *.c *.h
+recursive-include pecon/_libs/include *.h

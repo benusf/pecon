@@ -11,8 +11,8 @@ compile_flags.txt
 econlib/*.c
 *.c
 *.h
-!pecon/src/*.c
-!pecon/include/*.h
+!pecon/_libs/src/*.c
+!pecon/_libs/include/*.h
 *.html
 
 # Build directories

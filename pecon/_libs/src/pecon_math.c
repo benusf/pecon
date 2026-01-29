@@ -1,4 +1,4 @@
-#include "pecon_math.h"
+#include "pecon_api.h"
 #include <stdio.h>
 #include <stdlib.h>
 

@@ -1,4 +1,6 @@
-cdef extern from "pecon_stats.h":
+cdef extern from "pecon_api.h":
+
+    double pecon_mean(const double *x, int n)
 
     cdef struct Corr_Res:
         double coef

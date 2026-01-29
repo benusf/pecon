@@ -3,7 +3,7 @@ from Cython.Build import cythonize
 import numpy
 
 # Include directories
-include_dirs = ["pecon/include", numpy.get_include()]
+include_dirs = ["pecon/_libs/include", numpy.get_include()]
 
 # Extensions
 extensions = [
@@ -11,9 +11,9 @@ extensions = [
         "pecon._core",
         sources=[
             "pecon/_core.pyx",  # use .pyx, Cython will generate .c
-            "pecon/src/pecon_ols.c",
-            "pecon/src/pecon_math.c",
-            "pecon/src/pecon_stats.c",
+            "pecon/_libs/src/pecon_ols.c",
+            "pecon/_libs/src/pecon_math.c",
+            "pecon/_libs/src/pecon_stats.c",
         ],
         include_dirs=include_dirs,
         language="c",
@@ -22,9 +22,9 @@ extensions = [
         "pecon.stats.basic_stats",
         sources=[
             "pecon/stats/basic_stats.pyx",  # use .pyx
-            "pecon/src/pecon_ols.c",
-            "pecon/src/pecon_math.c",
-            "pecon/src/pecon_stats.c",
+            "pecon/_libs/src/pecon_ols.c",
+            "pecon/_libs/src/pecon_math.c",
+            "pecon/_libs/src/pecon_stats.c",
         ],
         include_dirs=include_dirs,
         language="c",

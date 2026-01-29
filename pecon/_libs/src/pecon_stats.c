@@ -1,6 +1,9 @@
-#include "pecon_stats.h"
+#include "pecon_api.h"
 #include <math.h>
 
+double pecon_mean(const double *x, int n) {
+    return 1;
+}
 Corr_Res pecon_corr(double *x, double *y, int n) {
   Corr_Res res;
   double sum_x = 0, sum_y = 0;
