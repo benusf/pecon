@@ -1,7 +1,5 @@
-from ._core import mean, corr
-import types
+from . import stats
+from . import regression
 
+__all__ = ["stats", "regression"]
 
-stats = types.SimpleNamespace(mean=mean, corr=corr)
-
-__all__ = ["mean", "corr", "stats"]

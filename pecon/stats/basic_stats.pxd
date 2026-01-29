@@ -7,5 +7,3 @@ cdef extern from "pecon_api.h":
         double pvalue
 
     Corr_Res pecon_corr(double *x, double *y, int n)
-
-# cpdef tuple correlation(list x, list y)

@@ -11,7 +11,7 @@ cpdef mean(list x):
     return res
 
 
-cpdef tuple correlation(list x, list y):
+cpdef tuple corr(list x, list y):
     cdef int n = len(x)
     if len(y) != n:
         raise ValueError("x and y must have same lenght")

@@ -2,8 +2,14 @@
 #include <math.h>
 
 double pecon_mean(const double *x, int n) {
-    return 1;
+  double sum = 0, mean;
+  for (int i = 0; i < n; ++i) {
+    sum += x[i];
+  }
+  mean = sum / n;
+  return mean;
 }
+
 Corr_Res pecon_corr(double *x, double *y, int n) {
   Corr_Res res;
   double sum_x = 0, sum_y = 0;
@@ -27,7 +33,13 @@ Corr_Res pecon_corr(double *x, double *y, int n) {
 
   res.coef = sum_xy / sqrt(sum_x2 * sum_y2);
   double rs = sqrt((1 - pow(res.coef, 2)) / (n - 2));
-  res.pvalue = res.coef / rs;
+
+  if(rs) { 
+      res.pvalue = res.coef / rs;
+  }
+  else { 
+      res.pvalue = 0.0;
+  }
 
   return res;
 }
