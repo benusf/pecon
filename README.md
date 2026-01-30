@@ -1,12 +1,10 @@
 <p align="center">
-  <img src="pecon.jpg" alt="PeCon" width="250">
+  <img src="https://raw.githubusercontent.com/pecon-devs/pecon/main/pecon.jpg" width="400">
 </p>
 
 ### A Lightweight Econometrics Library in C & Cython
 
 **PeCon** is a high-performance econometrics and statistics library written in **pure C** with **Cython bindings**, designed for researchers and developers who want **speed, control, and minimal dependencies**.
-
-Unlike NumPy, SciPy, or Statsmodels, **PeCon implements its own numerical core in C**, making it lightweight, fast, and suitable for low-level or embedded scientific workflows.
 
 ---
 
@@ -14,7 +12,7 @@ Unlike NumPy, SciPy, or Statsmodels, **PeCon implements its own numerical core i
 
 - 🚀 **High performance** (C backend, minimal Python overhead)
 - 🧮 Core econometrics & statistics implemented **from scratch**
-- 📦 No heavy dependencies (NumPy optional)
+- 📦 No heavy dependencies
 - 🔌 Clean Python API
 - 🧠 Designed for research, teaching, and reproducibility
 
@@ -56,7 +54,3 @@ print(coef, pval)
 Open an issue or submit a pull request.
 
 ---
-
-## 👨‍💻 Author
-
-**BenusF**
