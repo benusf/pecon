@@ -1,4 +1,4 @@
-from .basic_stats import mean, corr
+from .stats import mean, var, std, cov, corr
 
-__all__ = ["mean", "corr"]
+__all__ = ["mean", "var", "std", "cov", "corr"]
 
