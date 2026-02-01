@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://raw.githubusercontent.com/pecon-devs/pecon/main/pecon.jpeg" width="550">
+<img src="https://raw.githubusercontent.com/pecon-devs/pecon/main/pecon.jpeg" width="300">
 </h1><br>
 
 ### A Lightweight Econometrics Library in C & Cython
