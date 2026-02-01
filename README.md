@@ -1,6 +1,6 @@
-<p align="center">
-  <img src="pecon.jpg" alt="PeCon" width="250">
-</p>
+<h1 align="center">
+<img src="https://raw.githubusercontent.com/numpy/numpy/main/pecon.jpeg" width="550">
+</h1><br>
 
 ### A Lightweight Econometrics Library in C & Cython
 
@@ -54,9 +54,3 @@ print(coef, pval)
 - Documentation & examples
 
 Open an issue or submit a pull request.
-
----
-
-## 👨‍💻 Author
-
-**BenusF**
