@@ -8,7 +8,6 @@ compile_flags.txt
 *.so
 *.pyd
 *.cpp
-econlib/*.c
 *.c
 *.h
 !pecon/_libs/src/*.c
@@ -29,6 +28,8 @@ ENV/
 
 # Pytest cache
 .pytest_cache/
+.coverage
+htmlcov/
 
 # IDE / editor files
 .vscode/
@@ -48,6 +49,10 @@ Thumbs.db
 # Optional: examples outputs
 examples/__pycache__/
 examples/*.pyc
+
+# docs files
+docs/build/
+docs/_build/
 
 # Others
 TODO.org
