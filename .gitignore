@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+compile_flags.txt
+
+# Cython build files
+*.so
+*.pyd
+*.cpp
+econlib/*.c
+*.c
+*.h
+!pecon/_libs/src/*.c
+!pecon/_libs/include/*.h
+*.html
+
+# Build directories
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environment
+env/
+venv/
+ENV/
+
+# Pytest cache
+.pytest_cache/
+
+# IDE / editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional: examples outputs
+examples/__pycache__/
+examples/*.pyc
+
+# Others
+TODO.org
+References.md

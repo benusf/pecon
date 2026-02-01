@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+
+recursive-include pecon *.pyx *.pxd
+recursive-include pecon/_libs/src *.c *.h
+recursive-include pecon/_libs/include *.h

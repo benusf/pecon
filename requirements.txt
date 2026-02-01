@@ -1,0 +1,7 @@
+###
+Cython>=3.0 # Required to compile Cython extensions
+numpy>=1.26
+setuptools>=68.0
+wheel>=0.41
+twine>=4.0
+pytest>=8.0
