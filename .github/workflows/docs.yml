@@ -1,0 +1,19 @@
+name: Build and Deploy Docs
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - run: pip install sphinx pydata-sphinx-theme ghp-import
+      - run: cd docs && make html
+      - run: ghp-import -n -p -f docs/_build/html
+
