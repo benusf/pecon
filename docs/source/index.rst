@@ -8,4 +8,4 @@ Econometrics & statistics library with C + Cython core.
    :caption: Contents
 
    install
-   api/stats
+   api
