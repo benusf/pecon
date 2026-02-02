@@ -41,8 +41,8 @@ def mean(x, drop_nan=False):
     >>> y = [1, 3, 5, 7]
     >>> mx = stats.mean(x)
     >>> my = stats.mean(y)
-    >>> print(f"X mean = {mx} and Y mean = {my}")
-    X mean = 5.0 and Y mean = 4.0
+    >>> print(f"x mean = {mx} and y mean = {my}")
+    x mean = 5.0 and y mean = 4.0
 
     """
 
