@@ -45,11 +45,11 @@ cpdef _mean(object x):
     res = pecon_mean(&mv[0], n)
     return res
 
-cpdef _var(x):
+cpdef _var(x, ddof=1):
     cdef:
         double[:] mv
         object owner
-        int n
+        int n, dof
 
     owner, mv = as_double_view(x)
     n = mv.shape[0]
@@ -61,14 +61,16 @@ cpdef _var(x):
         msg = "array must contain at least two values"
         raise ValueError(msg)
 
-    res = pecon_var(&mv[0], n)
+    dof = ddof
+    res = pecon_var(&mv[0], n, dof)
+
     return res
 
-cpdef _std(x):
+cpdef _std(x, ddof=1):
     cdef:
         double[:] mv
         object owner
-        int n
+        int n, dof
 
     owner, mv = as_double_view(x)
     n = mv.shape[0]
@@ -80,15 +82,17 @@ cpdef _std(x):
         msg = "array must contain at least two values"
         raise ValueError(msg)
 
-    res = pecon_std(&mv[0], n)
+    dof = ddof
+    res = pecon_std(&mv[0], n, dof)
+
     return res
 
-cpdef _cov(x, y):
+cpdef _cov(x, y, ddof=1):
     cdef:
         double[:] mvx
         double[:] mvy
         object owner
-        int n
+        int n, dof
 
     owner, mvx = as_double_view(x)
     owner, mvy = as_double_view(y)
@@ -106,7 +110,8 @@ cpdef _cov(x, y):
         msg = "x and y must have same lenght"
         raise ValueError(msg)
 
-    res = pecon_cov(&mvx[0], &mvy[0], nx)
+    dof = ddof
+    res = pecon_cov(&mvx[0], &mvy[0], nx, dof)
 
     return res
 
@@ -118,7 +123,7 @@ cpdef tuple _corr(x, y):
         int n
 
     owner, mvx = as_double_view(x)
-    owner, mvy = as_double_view(x)
+    owner, mvy = as_double_view(y)
 
     nx = mvx.shape[0]
     ny = mvy.shape[0]
@@ -130,4 +135,4 @@ cpdef tuple _corr(x, y):
     cdef Corr_Res res
     res = pecon_corr(&mvx[0], &mvy[0], nx)
 
-    return res.coef, res.pvalue
+    return res.coef, res.pvalue, res.ts

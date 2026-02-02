@@ -1,13 +1,18 @@
 from pecon import stats
 import numpy as np
 
-x = np.array([1.28000000e002, 3.27670000e004, 8.38822400e006, 3.13740168e057, 1.12357916e164 ])
-y = np.array([2.800000e002, 37.000e004, 2.2400e006, 3.740168e057, 1.357916e164 ])
+x = [2, 4, 6, 8]
+xx = [2, 4, 6, 8, 10, 17, 24]
+y = [1, 6, 12, 30, 17, 55, 40]
+a = [1,2,3]
+b = [1,5,7]
 
 m = stats.mean(x)
-v = stats.var(x)
-s = stats.std(x)
-c = stats.cov(x, y)
+v = stats.var(xx, ddof=1)
+s = stats.std(a, ddof=1)
+sb = stats.std(b, ddof=1)
+c = stats.cov(xx, y, ddof=1)
+r = stats.corr(xx, y)
 
-
-print(f"mean = {m}\n var = {v}\n std = {s}\n cov = {c}")
+print(f"mean = {m}\n var = {v}\n std = {s}\n stdb = {sb}\n cov = {c}")
+print(f"r = {r.r} p = {r.pvalue}")
