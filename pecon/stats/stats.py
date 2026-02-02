@@ -2,30 +2,41 @@ from .basic_stats import _mean, _var, _std, _cov, _corr
 
 
 
-
-def mean(x, 
-         drop_nan=False):
+def mean(x, drop_nan=False):
     """
-    Compute arithmetic mean.
+    Compute the arithmetic mean.
 
     Parameters
     ----------
     x : array-like
+        Input data.
 
-    Return
-    ----------
-    m : 
+    Returns
+    -------
+    float
+        The mean of the input values.
+
+    Examples
+    --------
+    >>> from pecon import stats
+    >>> x = [2, 4, 6, 8]
+    >>> y = [1, 3, 5, 7]
+    >>> mx = stats.mean(x)
+    >>> my = stats.mean(y)
+    >>> print(f"X mean = {mx} and Y mean = {my}")
+    X mean = 5.0 and Y mean = 4.0
+
     """
+
     # xp = array_namespace(x)
     # x = _check_array(x, xp=xp, drop_nan=drop_nan)
 
     m = _mean(x)
-
     return m
 
 def var(x):
     """
-    Compute arithmetic mean.
+    Compute variance
 
     Parameters
     ----------
@@ -33,7 +44,8 @@ def var(x):
 
     Return
     ----------
-    m : 
+    var : float
+        variance of the array
     """
     var = _var(x)
 
@@ -41,7 +53,7 @@ def var(x):
 
 def std(x):
     """
-    Compute arithmetic mean.
+    Compute standard deviation
 
     Parameters
     ----------
@@ -49,7 +61,8 @@ def std(x):
 
     Return
     ----------
-    m : 
+    std : float
+        standard deviation of the array
     """
     std = _std(x)
 
@@ -57,7 +70,7 @@ def std(x):
 
 def cov(x, y):
     """
-    Compute arithmetic correlation.
+    Compute covariance between two variable
 
     Parameters
     ----------
@@ -66,8 +79,8 @@ def cov(x, y):
      
     Return
     ----------
-    r :
-    p : 
+    cov : float
+        the covariance of the x and y.
     """
     if len(x) != len(y):
         msg = "x and y must have same lenght"
@@ -78,7 +91,7 @@ def cov(x, y):
 
 def corr(x, y):
     """
-    Compute arithmetic correlation.
+    Compute arithmetic correlation
 
     Parameters
     ----------
@@ -87,8 +100,20 @@ def corr(x, y):
      
     Return
     ----------
-    r :
-    p : 
+    r : float
+        correlation coeficient
+    p : float
+        p-value
+    
+    Example
+    ----------
+    >>from pecon import stats
+
+    >>x = [1, 3, 5, 7]
+    >>y = [12, 5, 64 43]
+
+    >>r, p = stats.corr(x, y)
+    >>print(f"Correlation Coeficient = {r} and pvalue = {p}")
     """
     r, p = _corr(x,y)
 
