@@ -180,8 +180,8 @@ def cov(x, y, ddof=1):
     >>> x = [2, 4, 6, 8, 10, 17, 24]
     >>> y = [1, 6, 12, 30, 17, 55, 40]
     >>> cov = stats.cov(x, y, ddof=1)
-    >>> print(f"Covariance = {cov}")
-    Covariance = 128.33333333333337
+    >>> print(f"covariance = {cov}")
+    covariance = 128.33333333333337
 
     """
 
