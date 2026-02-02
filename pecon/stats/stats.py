@@ -132,7 +132,7 @@ def std(x, ddof=1):
     >>> std = stats.std(x, ddof=1)
     >>> print(f"std = {var}")
     std = 2.581988897471611
-    --------
+    
     """
 
     if not isinstance(ddof, int):
@@ -180,8 +180,8 @@ def cov(x, y, ddof=1):
     >>> x = [2, 4, 6, 8, 10, 17, 24]
     >>> y = [1, 6, 12, 30, 17, 55, 40]
     >>> cov = stats.cov(x, y, ddof=1)
-    >>> print(f"Covariance = {cov}")
-    Covariance = 128.33333333333337
+    >>> print(f"covariance = {cov}")
+    covariance = 128.33333333333337
 
     """
 
@@ -208,13 +208,21 @@ def corr(x, y) -> CorrResult:
 
     Parameters
     ----------
-    x, y : array-like
-        One-dimensional sequences of numerical values with equal length.
+    x : array-like
+        One-dimensional sequence of numerical values.
+    y : array-like
+        One-dimensional sequence of numerical values of the same length as x.
 
     Returns
     -------
-    float
-        Pearson correlation coefficient between x and y.
+    CorrResult
+        Dataclass containing:
+            - r : float
+                Pearson correlation coefficient.
+            - pvalue : float
+                Two-tailed p-value for testing non-correlation.
+            - tstat : float
+                t-statistic corresponding to the correlation.
 
     Notes
     -----
@@ -228,9 +236,10 @@ def corr(x, y) -> CorrResult:
     >>> x = [2, 4, 6, 8, 10, 17, 24]
     >>> y = [1, 6, 12, 30, 17, 55, 40]
     >>> res = stats.corr(x, y)
-    >>> print(f"Correlation Coeficient = {res.r}\n pvalue = {res.pvalue}")
-    Correlation Coeficient = 0.8420191952099748
+    >>> print(f"Correlation Coefficient = {res.r}\\n pvalue = {res.pvalue}")
+    Correlation Coefficient = 0.8420191952099748
     pvalue = 0.01746558746945201
+
     """
 
     r, p, t = _corr(x, y)
