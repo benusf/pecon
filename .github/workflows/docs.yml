@@ -2,19 +2,18 @@ name: Deploy Docs
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
+
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
-    if: contains(github.event.head_commit.message, 'DOC:')
+    if: contains(github.event.head_commit.message, 'DOC:') || github.event_name == 'workflow_dispatch'
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/setup-python@v4
         with:
           python-version: 3.11
 
@@ -29,12 +28,15 @@ jobs:
           cd docs
           make html
 
+      - name: Verify docs output
+        run: |
+          ls -lah docs/build/html
+          test -f docs/build/html/index.html
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./docs/_build/html
-          user_name: "github-actions[bot]"
-          user_email: "github-actions[bot]@users.noreply.github.com"
+          publish_dir: ./docs/build/html
           commit_message: "Update docs [skip ci]"
 
