@@ -1,0 +1,15 @@
+# .github/labeler.yml
+# PR labeler for pecon organization
+bug:
+  - "pecon/**"
+  - "tests/**"
+feature:
+  - "examples/**"
+  - "docs/**"
+doc:
+  - "docs/**"
+chore:
+  - "*.yml"
+  - "*.md"
+  - ".github/**"
+

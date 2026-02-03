@@ -2,7 +2,7 @@ from array import array
 import numpy as np
 
 
-cdef inline tuple as_double_view(object x):
+cpdef tuple as_double_view(object x):
     cdef double[:] mv
 
     # --- NumPy arrays ---

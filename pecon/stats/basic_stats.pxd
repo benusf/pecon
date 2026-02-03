@@ -1,5 +1,6 @@
 cdef extern from "pecon_api.h":
 
+
     double pecon_mean(const double *x, int n)
     double pecon_var(const double *x, int n, int ddof)
     double pecon_std(const double *x, int n, int ddof)

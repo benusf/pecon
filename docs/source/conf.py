@@ -22,6 +22,7 @@ autodoc_default_options = {
 }
 napoleon_numpy_docstring = True
 napoleon_google_docstring = False
+autodoc_class_signature = "separated"
 
 
 html_theme = "pydata_sphinx_theme"

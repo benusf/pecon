@@ -5,3 +5,4 @@ API Reference
    :maxdepth: 1
 
    api/stats
+   api/regression
