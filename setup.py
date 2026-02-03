@@ -10,10 +10,18 @@ include_dirs = [
 extensions = [
     Extension(
         "pecon.stats.basic_stats",
-        sources=[
+    sources=[
             "pecon/stats/basic_stats.pyx",
+            "pecon/_libs/src/pecon_stats.c",
+        ],
+        include_dirs=include_dirs,
+        language="c",
+    ),
+    Extension(
+        "pecon.regression._regression",
+    sources=[
+            "pecon/regression/_regression.pyx",
             "pecon/_libs/src/pecon_ols.c",
-            "pecon/_libs/src/pecon_math.c",
             "pecon/_libs/src/pecon_stats.c",
         ],
         include_dirs=include_dirs,

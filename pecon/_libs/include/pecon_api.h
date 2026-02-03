@@ -1,6 +1,7 @@
 #ifndef PECON_API_H
 #define PECON_API_H
 
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -20,6 +21,13 @@ typedef struct Corr_Res {
   double ts;
 } Corr_Res;
 
+typedef struct Simple_OLS_Res {
+  double alpha;
+  double beta;
+  double r;
+  double p;
+} Simple_OLS_Res;
+
 /* =========================
    Statistics
    ========================= */
@@ -30,6 +38,7 @@ double pecon_cov(double *x, double *y, int n, int ddof);
 static double betacf(double a, double b, double x);
 static double betainc(double a, double b, double x);
 Corr_Res pecon_corr(double *x, double *y, int n);
+Simple_OLS_Res SimpleOLS(double *x, double *y, int n);
 
 /* =========================
    OLS
