@@ -1,0 +1,52 @@
+
+pecon._libs:
+- changed-files:
+  - any-glob-to-any-file:
+    - pecon/_libs/**
+
+pecon.linalg:
+- changed-files:
+  - any-glob-to-any-file:
+    - pecon/linalg/**
+
+pecon.regression:
+- changed-files:
+  - any-glob-to-any-file:
+    - pecon/regression/**
+
+pecon.stats:
+- changed-files:
+  - any-glob-to-any-file:
+    - pecon/stats/**
+
+Cython:
+- changed-files:
+  - any-glob-to-any-file:
+    - pecon/**/*.pyx*
+    - pecon/**/*.pxd*
+    - pecon/**/*.pxi*
+    - pecon/**/_generate_pyx.py
+
+C/C++:
+- changed-files:
+  - any-glob-to-any-file:
+    - pecon/**/*.c
+    - pecon/**/*.c.in
+    - pecon/**/*.c.old
+    - pecon/**/*.h
+    - pecon/**/*.h.in
+    - pecon/**/*.cpp
+    - pecon/**/*.cc
+    - pecon/**/*.cxx
+    - pecon/**/*.hpp
+
+Documentation:
+- changed-files:
+  - any-glob-to-any-file:
+    - docs/**
+
+CI:
+- changed-files:
+  - any-glob-to-any-file:
+    - .github/workflows/**
+    - .github/**

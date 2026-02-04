@@ -44,10 +44,10 @@ class OLS:
     Example
     -------
     >>> import numpy as np
-    >>> from simple_ols import SimpleOLS
+    >>> from pecon.regression import OLS
     >>> x = np.array([2, 4, 6, 8])
     >>> y = np.array([1, 5, 2, 7])
-    >>> model = SimpleOLS(x, y)
+    >>> model = OLS(x, y)
     >>> model.fit()
     >>> model.summary()
     beta  = 0.75

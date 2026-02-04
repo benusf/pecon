@@ -1,15 +1,35 @@
-# .github/labeler.yml
-# PR labeler for pecon organization
-bug:
-  - "pecon/**"
-  - "tests/**"
-feature:
-  - "examples/**"
-  - "docs/**"
-doc:
-  - "docs/**"
-chore:
-  - "*.yml"
-  - "*.md"
-  - ".github/**"
+array types:
+  - 'array types'
 
+Benchmarks:
+  - 'BENCH'
+
+Build issues:
+  - 'BLD'
+
+CI:
+  - 'CI'
+
+defect:
+  - '(BUG|FIX)'
+
+deprecated:
+  - 'DEP'
+
+Documentation:
+  - 'DOC'
+
+DX:
+  - 'DEV'
+
+enhancement:
+  - 'ENH'
+
+maintenance:
+  - '(MAINT|TST)'
+
+query:
+  - '(Q|q)uery'
+
+RFC:
+  - 'RFC'
