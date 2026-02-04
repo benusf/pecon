@@ -17,5 +17,5 @@ jobs:
         uses: actions/labeler@v4
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          fail-on-no-matching-files: false
+ 
 
