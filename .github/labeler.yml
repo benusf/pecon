@@ -1,35 +1,9 @@
-array types:
-  - 'array types'
+# CORRECT v5 syntax - each label needs "any", "all", or "changed-files" array
+"test-label":
+  - any: ["**"]  # This will match ANY file
 
-Benchmarks:
-  - 'BENCH'
+"documentation":
+  - any: ["**"]  # Will label ALL PRs as documentation
 
-Build issues:
-  - 'BLD'
-
-CI:
-  - 'CI'
-
-defect:
-  - '(BUG|FIX)'
-
-deprecated:
-  - 'DEP'
-
-Documentation:
-  - 'DOC'
-
-DX:
-  - 'DEV'
-
-enhancement:
-  - 'ENH'
-
-maintenance:
-  - '(MAINT|TST)'
-
-query:
-  - '(Q|q)uery'
-
-RFC:
-  - 'RFC'
+"bug":
+  - any: ["**"]  # Will also label ALL PRs as bug
