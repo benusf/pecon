@@ -1,23 +1,35 @@
-bug:
-  - changed-files:
-      - any-glob-to-any-file:
-          - "pecon/**"
-          - "tests/**"
+array types:
+  - 'array types'
 
-feature:
-  - changed-files:
-      - any-glob-to-any-file:
-          - "examples/**"
-          - "docs/**"
+Benchmarks:
+  - 'BENCH'
 
-doc:
-  - changed-files:
-      - any-glob-to-any-file:
-          - "docs/**"
+Build issues:
+  - 'BLD'
 
-chore:
-  - changed-files:
-      - any-glob-to-any-file:
-          - "*.yml"
-          - "*.md"
-          - ".github/**"
+CI:
+  - 'CI'
+
+defect:
+  - '(BUG|FIX)'
+
+deprecated:
+  - 'DEP'
+
+Documentation:
+  - 'DOC'
+
+DX:
+  - 'DEV'
+
+enhancement:
+  - 'ENH'
+
+maintenance:
+  - '(MAINT|TST)'
+
+query:
+  - '(Q|q)uery'
+
+RFC:
+  - 'RFC'
