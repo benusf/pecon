@@ -1,15 +1,23 @@
-# .github/labeler.yml
-# PR labeler for pecon organization
 bug:
-  - "pecon/**"
-  - "tests/**"
-feature:
-  - "examples/**"
-  - "docs/**"
-doc:
-  - "docs/**"
-chore:
-  - "*.yml"
-  - "*.md"
-  - ".github/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "pecon/**"
+          - "tests/**"
 
+feature:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "examples/**"
+          - "docs/**"
+
+doc:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/**"
+
+chore:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.yml"
+          - "*.md"
+          - ".github/**"
