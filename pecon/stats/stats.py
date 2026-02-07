@@ -1,5 +1,9 @@
-from .basic_stats import _mean, _var, _std, _cov, _corr
 from dataclasses import dataclass
+
+from .basic_stats import _mean, _var, _std, _cov, _corr
+from pecon._backend._array_api_override import array_namespace
+from pecon._backend._array_api import _asarray
+from pecon.utils.validation import _check_array
 
 """
 Statistical utility functions for data analysis.
@@ -17,7 +21,7 @@ class CorrResult:
     tstat: float    # t-statistic
 
 
-def mean(x, drop_nan=False):
+def mean(x, allow_nan=False):
     """
     Compute the arithmetic mean of a dataset.
 
@@ -46,8 +50,10 @@ def mean(x, drop_nan=False):
 
     """
 
-    # xp = array_namespace(x)
-    # x = _check_array(x, xp=xp, drop_nan=drop_nan)
+    x = _asarray(x)
+    xp = array_namespace(x)
+
+    x = _check_array(x, xp=xp, allow_nan=allow_nan)
 
     m = _mean(x)
     return m

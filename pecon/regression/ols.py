@@ -1,6 +1,12 @@
+import numpy as np
+
 from pecon.stats import cov, var, mean 
 from ._regression import _OLS
-import numpy as np
+from pecon._backend._array_api_override import array_namespace
+from pecon._backend._array_api import _asarray
+
+
+__all__ = ["OLS"]
 
 class OLS:
     """
@@ -44,7 +50,7 @@ class OLS:
     Example
     -------
     >>> import numpy as np
-    >>> from pecon.regression import OLS
+    >>> from pecon import OLS
     >>> x = np.array([2, 4, 6, 8])
     >>> y = np.array([1, 5, 2, 7])
     >>> model = OLS(x, y)
@@ -98,7 +104,9 @@ class OLS:
         ValueError
             If the independent variable has zero variance.
         """
-        arr = np.asarray(self.x)
+        xp = array_namespace(self.x)
+        arr = _asarray(self.x, xp=xp)
+
         if arr.ndim == 1:
             self.onedim = True
             self.alpha, self.beta, self.r, self.p = _OLS(self.x, self.y, self.onedim)

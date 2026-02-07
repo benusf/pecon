@@ -1,4 +1,4 @@
-from .regression import OLS
+from .ols import OLS
 
 
 __all__ = ["OLS"]
