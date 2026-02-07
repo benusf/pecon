@@ -1,7 +1,7 @@
 from . import stats
 from . import regression
-from .regression.regression import OLS
+from .regression import OLS
 from .utils.warnings import *
 
-__all__ = ["stats", "regression", "utils"]
+__all__ = ["stats", "OLS", "utils"]
 
